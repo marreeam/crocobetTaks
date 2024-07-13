@@ -1,0 +1,19 @@
+<div class="posts-list">
+  <div *ngFor="let post of posts" class="post-card">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+    <button (click)="openModal(post)">დეტალურად</button>
+  </div>
+</div>
+
+<div *ngIf="selectedPost" class="modal">
+  <div class="modal-content">
+    <button class="close-button" (click)="closeModal()">×</button>
+    <div class="modal-header">{{ selectedPost.title }}</div>
+    <div class="modal-body">{{ selectedPost.body }}</div>
+    <div class="modal-footer">
+      <button class="action-button" (click)="closeModal()">დახურვა</button>
+    </div>
+  </div>
+</div>
+

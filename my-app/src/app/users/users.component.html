@@ -1,0 +1,31 @@
+<div class="search-container">
+  <input type="text" placeholder="მოძებნე სახელით, გვარით ან მეილით" [(ngModel)]="searchText" />
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>სახელი</th>
+      <th>გვარი</th>
+      <th>ტელეფონი</th>
+      <th>მეილი</th>
+      <th>კომპანიის დასახელება</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers()">
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.company.name }}</td>
+      <td>
+        <button class="todo-button" (click)="viewTodos(user.id)">Todo List</button>
+        <button class="todo-button" (click)="viewPosts(user.id)">პოსტები</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

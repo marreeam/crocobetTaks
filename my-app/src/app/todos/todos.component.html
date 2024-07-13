@@ -1,0 +1,11 @@
+<div class="todo-list">
+  <div *ngFor="let todo of todos" class="todo-item" [ngClass]="{ 'completed': todo.completed }">
+    <div class="todo-checkbox">
+      <input type="checkbox" [checked]="todo.completed" disabled>
+    </div>
+    <div class="todo-content">
+      <h3>{{ todo.title }}</h3>
+    </div>
+  </div>
+</div>
+

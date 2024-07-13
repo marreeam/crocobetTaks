@@ -1,0 +1,24 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Company</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name.split(' ')[0] }}</td>
+        <td>{{ user.name.split(' ')[1] }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.company.name }}</td>
+        <td>
+          <button (mouseover)="onHover($event)" (mouseout)="onHoverOut($event)" (click)="viewPosts(user.id)">Posts</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
